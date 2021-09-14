@@ -1,38 +1,228 @@
-.App {
-  text-align: center;
-}
+/**
+ * @author: alexandercds 
+ * @description: 
+ * @date 13/septiembre
+**/  
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+$primaryBlue: hsl(223, 87%, 63%);
+$secondaryPaleBlue: hsl(223, 100%, 88%);
+$secondaryLightRed: hsl(354, 100%, 66%);
+$neutralGray: hsl(0, 0%, 59%);
+$neutralVeryDarkBlue: hsl(209, 33%, 12%);
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+  margin: 0;
+  padding: 0;
+  font: { 
+    size: 20px;
+    family: 'Libre Franklin';
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo, .header, .form, .socila-medial, h2 { 
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 400;
+  color: $neutralGray;
+}
+
+h2> span {
+  font-size: 1em;
+  color: #000;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.form, .input-text {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+}
+
+.input-text {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%; 
+  height: 70px;
+  border-radius: 40px;
+  border: 1px solid $secondaryPaleBlue;  
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background-color: $primaryBlue;
+  color: #FFF;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover,
+input[type="text"]:hover {
+  opacity: 0.5;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  padding-left: 35px;
+}
+
+input[type="text"]::placeholder {
+  outline: $secondaryLightRed;
+}
+
+input[type="text"]:focus {
+  outline: $secondaryLightRed;
+}
+
+input.error {
+  width: 100%;  
+  padding-left: 65px;
+  border: 2px solid $secondaryLightRed;
+} 
+
+.error {
+  padding-left: 65px;
+  margin-top: 3px; 
+  color: $secondaryLightRed;
+  font-weight: lighter;
+}
+
+i.error-icon {
+  width: 45px;
+  height: 45px;
+  content: url('../svgs/icon-error.svg');
+  position: absolute;
+  padding: 15px;
+  min-width: 15px;
+}
+
+.socila-medial {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-fab { 
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center; 
+  border-radius: 50%;
+  border: 1px solid $neutralGray;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-fab:hover {
+  //background-color: $primaryBlue;
+  box-shadow: 0px 0px 15px 0px $neutralGray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.facebook> path {
+  broker: #000;
+}
+  
+.facebook { 
+  
+  content: url('../svgs/icon-facebook.svg');
+}
+
+.twitter  {
+  content: url('../svgs/icon-twitter.svg');
+}
+
+.instagram  {
+  content: url('../svgs/icon-instagram.svg');
+}
+
+.copy {
+  color: $neutralGray;
+  font-weight: 600;
+}
+
+@media (min-width: 120px) and (max-width: 700px) {
+  .container {
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  input {
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"] {
+    margin-left: 0px;
+    
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  .illustration> img {
+    width: 100%;
+    height: 100%; 
+  }
+
+  .footer {
+    margin-top: 100px;
+  }
+
+  h2 {
+    font-size: 1.5em; 
+  }
+  
+  h2> span {
+    font-size: 0.9em; 
+  }
+  
+  h3 {
+    text-align: center;
+    font-size: 0.9em; 
+  }
+
+  .error {
+    padding-left: 0px;
+  }
+
+  span.error {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 }

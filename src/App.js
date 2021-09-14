@@ -9,7 +9,8 @@ import illustration from './assets/images/illustration-dashboard.png';
 import InputEmail from './components/InputEmail';
 import InputButton from './components/InputButton';
 import Form from './components/Form';
-import { useForm } from 'react-hook-form';
+import FabLink from './components/FabLink';
+import { useForm } from 'react-hook-form'; 
 
 const App = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -23,43 +24,41 @@ const App = (props) => {
                     <img 
                     alt="Logo Ping Single column" 
                     src={logo} 
-                    width="86" 
-                    height="26"/>
+                    width="130" 
+                    height="40"/>
                 </div>
                 <div className="header"> 
                     <h2>We are launching <span>soon!</span></h2>
                     <h3>Subcribe and get notified</h3>
                 </div>
-                <div className="form">
-                    <Form
-                    register={register}
-                    handleSubmit={handleSubmit}
-                    onSubmit={onSubmit}>
-                        <InputEmail
-                        placeholder="Email Address"
-                        name="email"
-                        errors={errors} 
-                        required={true}
-                        register={register} /> 
-                        <InputButton value="Notify Me"/>
-                    </Form>
-                </div>
+                <Form
+                register={register}
+                handleSubmit={handleSubmit}
+                onSubmit={onSubmit}>
+                    <InputEmail
+                    placeholder="Email Address"
+                    name="email"
+                    errors={errors} 
+                    required={true}
+                    register={register} /> 
+                    <InputButton value="Notify Me"/>
+                </Form>
                 <div className="illustration"> 
                     <img 
                     alt="Illustration Ping Single column" 
                     src={illustration} 
-                    width="1000" 
-                    height="610"/>
+                    width="800" 
+                    height="410"/>
                 </div>
                 <div className="footer"> 
-                    <div className="socila-medial">
-                        <span className="facebook"></span>
-                        <span className="twitter"></span>
-                        <span className="instagram"></span>
+                    <div className="socila-medial"> 
+                        <FabLink className="icon facebook"></FabLink>
+                        <FabLink className="icon twitter"></FabLink>
+                        <FabLink className="icon instagram"></FabLink>
                     </div>
                     <div className="copy-section">
                         <p className="copy">
-                            Copyright Ping. All reserved.
+                            © Copyright Ping. All reserved.
                         </p> 
                     </div>
                 </div>
